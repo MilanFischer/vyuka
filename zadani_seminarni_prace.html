@@ -2,17 +2,73 @@
 <html>
 <head>
     <title>Zadání seminární práce</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h1 {
+            color: #2c3e50;
+        }
+
+        h2 {
+            color: #34495e;
+        }
+
+        p {
+            line-height: 1.6;
+            font-size: 18px;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Zadání seminární práce</h1>
-    <p>Cílem seminární práce je osvojit si základy práce s klimatologickými časovými řadami. V rámci práce budou využita volně dostupná pozorovaná data Českého hydrometeorologického ústavu (<a href="https://www.chmi.cz/" target="_blank">ČHMÚ</a>). Data jsou k dispozici v <a href="https://www.chmi.cz/historicka-data/pocasi/denni-data/Denni-data-dle-z.-123-1998-Sb" target="_blank">denním</a> či <a href="https://www.chmi.cz/historicka-data/pocasi/mesicni-data/mesicni-data-dle-z.-123-1998-Sb" target="_blank">měsíčním</a> časovém kroku.</p>
-    <p>Kromě práce s pozorovanými daty se rovněž seznámíme s klimatickými scénáři připravenými Ústavem výzkumu globální změny (<a href="https://www.czechglobe.cz/cs/">CzechGlobe</a>). Data budoucích klimatických podmínek jsou k dispozici <a href="https://www.climrisk.cz/stahovani-dat-cr">zde</a>.</p>
-    
-    <h2>Postup práce</h2>
-    <p>Vybereme si stanici, pro kterou budeme data zpracovávat. K výběru můžeme použít odkaz s <a href="https://www.chmi.cz/historicka-data/pocasi/mesicni-data/mesicni-data-dle-z.-123-1998-Sb" target="_blank">měsíčními daty</a>. Pro snažší orientaci můžeme také použít tuto <a href="https://www.chmi.cz/files/portal/docs/poboc/OS/stanice/ShowStations_CZ.html" target="_blank">mapu</a>. Při výběru je nezbytné zohlednit, že stanice poskytuje data alespoň od roku 1961 a poskytuje jak teplotu vzduchu, tak srážky.</p>
 
-    <!-- Tlačítko Home pro návrat na úvodní stránku -->
-    <button onclick="window.location.href='index.html';">Home</button>
+    <div class="container">
+        <h1>Zadání seminární práce</h1>
+        <p>Cílem seminární práce je osvojit si základy práce s klimatologickými časovými řadami. V rámci práce budou využita volně dostupná pozorovaná data Českého hydrometeorologického ústavu (<a href="https://www.chmi.cz/" target="_blank">ČHMÚ</a>). Data jsou k dispozici v <a href="https://www.chmi.cz/historicka-data/pocasi/denni-data/Denni-data-dle-z.-123-1998-Sb" target="_blank">denním</a> či <a href="https://www.chmi.cz/historicka-data/pocasi/mesicni-data/mesicni-data-dle-z.-123-1998-Sb" target="_blank">měsíčním</a> časovém kroku.</p>
+        <p>Kromě práce s pozorovanými daty se rovněž seznámíme s klimatickými scénáři připravenými Ústavem výzkumu globální změny (<a href="https://www.czechglobe.cz/cs/">CzechGlobe</a>). Data budoucích klimatických podmínek jsou k dispozici <a href="https://www.climrisk.cz/stahovani-dat-cr">zde</a>.</p>
+
+        <h2>Postup práce</h2>
+        <p>Vybereme si stanici, pro kterou budeme data zpracovávat. K výběru můžeme použít odkaz s <a href="https://www.chmi.cz/historicka-data/pocasi/mesicni-data/mesicni-data-dle-z.-123-1998-Sb" target="_blank">měsíčními daty</a>. Pro snažší orientaci můžeme také použít tuto <a href="https://www.chmi.cz/files/portal/docs/poboc/OS/stanice/ShowStations_CZ.html" target="_blank">mapu</a>. Při výběru je nezbytné zohlednit, že stanice poskytuje data alespoň od roku 1961 a poskytuje jak teplotu vzduchu, tak srážky.</p>
+
+        <button onclick="window.location.href='index.html';">Home</button>
+    </div>
 
 </body>
 </html>
