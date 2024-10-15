@@ -2,6 +2,8 @@
 <html>
 <head>
     <title>Zadání seminární práce</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -121,7 +123,9 @@
 <h2>1. Výpočet roční extraterestrické radiace \( G_0^{\text{ročně}} \)</h2>
 <p>Roční extraterestrická radiace se vypočítá podle následujícího vzorce:</p>
 
-<code>G_0^{\text{ročně}} = \frac{I_0 \cdot 365 \cdot 24}{\pi} \cdot (1 + 0.033 \cdot \cos(2\pi \cdot \frac{n}{365})) \cdot \cos(\varphi)</code>
+<p>\[
+G_0^{\text{ročně}} = \frac{I_0 \cdot 365 \cdot 24}{\pi} \cdot (1 + 0.033 \cdot \cos(2\pi \cdot \frac{n}{365})) \cdot \cos(\varphi)
+\]</p>
 
 <ul>
     <li>\( I_0 \) je sluneční konstanta (přibližně 1367 W/m²)</li>
@@ -132,7 +136,9 @@
 <h2>2. Výpočet maximální teoretické délky slunečního svitu \( S_0^{\text{ročně}} \)</h2>
 <p>Teoretická maximální délka slunečního svitu \( S_0^{\text{ročně}} \) se vypočítá následovně:</p>
 
-<code>S_0^{\text{ročně}} = \frac{2 \cdot 24 \cdot 365}{\pi} \cdot \arccos(-\tan(\varphi) \cdot \tan(23.45^\circ))</code>
+<p>\[
+S_0^{\text{ročně}} = \frac{2 \cdot 24 \cdot 365}{\pi} \cdot \arccos(-\tan(\varphi) \cdot \tan(23.45^\circ))
+\]</p>
 
 <ul>
     <li>\( \varphi \) je zeměpisná šířka (ve stupních, převeďte na radiány)</li>
@@ -142,7 +148,9 @@
 <h2>3. Výpočet roční globální radiace \( G^{\text{ročně}} \)</h2>
 <p>Pro výpočet roční globální radiace \( G^{\text{ročně}} \) použijeme Angström-Prescottovu rovnici:</p>
 
-<code>G^{\text{ročně}} = G_0^{\text{ročně}} \cdot \left( a + b \cdot \frac{S^{\text{ročně}}}{S_0^{\text{ročně}}} \right)</code>
+<p>\[
+G^{\text{ročně}} = G_0^{\text{ročně}} \cdot \left( a + b \cdot \frac{S^{\text{ročně}}}{S_0^{\text{ročně}}} \right)
+\]</p>
 
 <ul>
     <li>\( G_0^{\text{ročně}} \) je roční extraterestrická radiace (v MJ/m²)</li>
@@ -163,7 +171,9 @@
 
 <p>Potom roční globální radiace bude:</p>
 
-<code>G^{\text{ročně}} = 8000 \cdot \left( 0.25 + 0.50 \cdot \frac{2000}{4460} \right) = 3818.4 \, MJ/m^2</code>
+<p>\[
+G^{\text{ročně}} = 8000 \cdot \left( 0.25 + 0.50 \cdot \frac{2000}{4460} \right) = 3818.4 \, MJ/m^2
+\]</p>
 
 <p>Roční globální radiace tedy vyjde přibližně 3818.4 MJ/m².</p>
 
