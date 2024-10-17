@@ -10,9 +10,29 @@
             background-color: #f4f4f4;
             color: #333;
         }
-        h1, h2 {
+
+        h1 {
             color: #2c3e50;
         }
+
+        h2, h3, h4 {
+            color: #34495e;
+        }
+
+        p {
+            line-height: 1.6;
+            font-size: 18px;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
         button {
             background-color: #3498db;
             color: white;
@@ -22,42 +42,61 @@
             cursor: pointer;
             font-size: 16px;
         }
+
         button:hover {
             background-color: #2980b9;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h3>Výběr stanice a seznámení s daty</h3>
+        <h1>Výběr stanice a seznámení s daty</h1>
 
-        <h4>1. Výběr stanice</h4>
+        <h2>1. Výběr stanice</h2>
         <ul>
             <li>Vybereme si stanici, pro kterou budeme data zpracovávat. K výběru můžeme použít odkaz s <a href="https://www.chmi.cz/historicka-data/pocasi/mesicni-data/mesicni-data-dle-z.-123-1998-Sb" target="_blank">měsíčními daty</a>. Pro snažší orientaci můžeme také použít tuto <a href="https://www.chmi.cz/files/portal/docs/poboc/OS/stanice/ShowStations_CZ.html" target="_blank">mapu</a>. Při výběru je nezbytné zohlednit, že stanice poskytuje data alespoň od roku 1961 a poskytuje jak teplotu vzduchu, tak srážky.</li>
         </ul>
 
-        <h4>2. Zjištění souřadnic</h4>
+        <h2>2. Zjištění souřadnic</h2>
         <ul>
             <li>Pro stanici si dohledáme přesné souřadnice (zaokrouhleno na čtyři desetinná místa) a spolu s názvem stanice je nahlásíme vyučujícímu.</li>
         </ul>
 
-        <h4>3. Stažení dat</h4>
+        <h2>3. Stažení dat</h2>
         <ul>
             <li>Pro začátek si stáhneme data pro průměrnou teplotu vzduchu.</li>
         </ul>
 
-        <h4>4. Uložení dat</h4>
+        <h2>4. Uložení dat</h2>
         <ul>
             <li>Data si uložíme do lokální složky. Pokud budeme data zpracovávat v MS Excel, data po otevření uložíme jako sešit aplikace Excel.</li>
         </ul>
 
-        <h4>5. Vytvoření prvního grafu</h4>
+        <h2>5. Vytvoření prvního grafu</h2>
         <ul>
             <li>Na zkoušku připravíme první graf zobrazující průměrnou roční teplotu vzduchu během let 1961–2020.</li>
         </ul>
 
-        <h4>6. Stručná souhrnná statistika</h4>
+        <h2>6. Stručná souhrnná statistika</h2>
         <ul>
             <li>Vypočítáme průměrnou teplotu pro dva poslední klimatologické normály (1961–1990 a 1991–2020) a určíme případný posun.</li>
             <li>S využitím spojnice trendů stanovíme časový trend vyjádřený jako změnu teploty za dekádu.</li>
