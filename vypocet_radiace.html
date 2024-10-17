@@ -73,7 +73,8 @@
     <div class="container">
         <h1>Výpočet globální radiace</h1>
 
-        <p>Tento postup vám umožní vypočítat roční globální radiaci na základě zeměpisné šířky, měřené délky slunečního svitu a dalších parametrů. Postup zahrnuje tři hlavní kroky: výpočet roční extraterestrické radiace \( G_0^{\text{ročně}} \), maximální teoretické délky slunečního svitu \( S_0^{\text{ročně}} \) a finální roční globální radiace \( G^{\text{ročně}} \). V prvním kroku si tedy pro námi zvolenou stanici stáhneme <a href="https://www.chmi.cz/historicka-data/pocasi/mesicni-data/mesicni-data-dle-z.-123-1998-Sb" target="_blank">měsíční data</a> doby trvání slunečního svitu a zjistíme si zeměpisnou šířku lokality.</p>
+        <p>Tento postup vám umožní vypočítat roční globální radiaci na základě zeměpisné šířky, měřené délky slunečního svitu a dalších parametrů. Postup zahrnuje tři hlavní kroky: výpočet roční extraterestrické radiace \( G_0^{\text{ročně}} \), maximální teoretické délky slunečního svitu \( S_0^{\text{ročně}} \) a finální roční globální radiace \( G^{\text{ročně}} \). V prvním kroku si tedy pro námi zvolenou stanici stáhneme <a href="https://www.chmi.cz/historicka-data/pocasi/mesicni-data/mesicni-data-dle-z.-123-1998-Sb" target="_blank">měsíční data</a> doby trvání slunečního svitu a zjistíme si zeměpisnou šířku lokality.
+        V případě absence dat délky slunčeního svitu pro námi zvolenou stanici, použijeme data z nejbližší stanice. Opět dbáme na to, aby data pokrývala obodobí 1961–2020.</p>
 
         <h2>1. Výpočet roční extraterestrické radiace \( G_0^{\text{ročně}} \)</h2>
         <p>Roční extraterestrická radiace se vypočítá podle následujícího vzorce:</p>
@@ -131,6 +132,9 @@
         \]</p>
 
         <p>Roční globální radiace tedy vyjde přibližně 3820 MJ/m²/rok.</p>
+
+        <h2>Výpočet s měřenými daty</h2>
+        Výpočet s měřenými daty provedeme stějně jako ve výše popsaném příkladu s tím, že \( S^{\text{ročně}} bude pocházet z dat pro námi vybranou stanici.
 
         <button onclick="window.location.href='zadani_seminarni_prace.html';">Zpět na Zadání seminární práce</button>
     </div>
