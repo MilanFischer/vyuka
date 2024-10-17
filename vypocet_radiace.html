@@ -2,6 +2,7 @@
 <html lang="cs">
 <head>
     <title>Výpočet globální radiace</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -32,14 +33,16 @@
     <div class="container">
         <h3>Výpočet globální radiace</h3>
 
-        <p>Tento postup vám umožní vypočítat roční globální radiaci na základě zeměpisné šířky, měřené délky slunečního svitu a dalších parametrů. Postup zahrnuje tři hlavní kroky: výpočet roční extraterestrické radiace \( G_0^{\text{ročně}} \), maximální teoretické délky slunečního svitu \( S_0^{\text{ročně}} \) a finální roční globální radiace \( G^{\text{ročně}} \). V prvním kroku si tedy pro námi zvolenou stanici stáhneme data doby trvání slunečního svitu a zjistíme si zeměpisnou šířku lokality.</p>
+        <p>Tento postup vám umožní vypočítat roční globální radiaci na základě zeměpisné šířky, měřené délky slunečního svitu a dalších parametrů. Postup zahrnuje tři hlavní kroky: výpočet roční extraterestrické radiace \( G_0^{\text{ročně}} \), maximální teoretické délky slunečního svitu \( S_0^{\text{ročně}} \) a finální roční globální radiace \( G^{\text{ročně}} \).</p>
 
-        <h4>1. Výpočet roční extraterestrické radiace \( G_0^{\text{ročně}} \)</h4>
+        <h4>1. Výpočet roční extraterestrické radiace \\( G_0^{\text{ročně}} \\)</h4>
         <p>Roční extraterestrická radiace se vypočítá podle následujícího vzorce:</p>
 
-        <p>\[
+        <p>
+        \\[
         G_0^{\text{ročně}} = \frac{I_0 \cdot 3600 \cdot 365 \cdot 24}{\pi} \cdot (1 + 0.033 \cdot \cos(2\pi \cdot \frac{n}{365})) \cdot \cos(\varphi) / 10^6
-        \]</p>
+        \\]
+        </p>
 
         <ul>
             <li>\( I_0 \) je sluneční konstanta (přibližně 1367 W/m²)</li>
@@ -47,24 +50,28 @@
             <li>\( n \) je pořadové číslo dne (pro roční hodnoty lze použít \( n = 182.5 \))</li>
         </ul>
 
-        <h4>2. Výpočet maximální teoretické délky slunečního svitu \( S_0^{\text{ročně}} \)</h4>
-        <p>Teoretická maximální délka slunečního svitu \( S_0^{\text{ročně}} \) se vypočítá následovně:</p>
+        <h4>2. Výpočet maximální teoretické délky slunečního svitu \\( S_0^{\text{ročně}} \\)</h4>
+        <p>Teoretická maximální délka slunečního svitu \\( S_0^{\text{ročně}} \\) se vypočítá následovně:</p>
 
-        <p>\[
+        <p>
+        \\[
         S_0^{\text{ročně}} = \frac{24 \cdot 365}{\pi} \cdot \arccos(-\tan(\varphi) \cdot \tan(\delta))
-        \]</p>
+        \\]
+        </p>
 
         <ul>
-            <li>\( \varphi \) je zeměpisná šířka (v radiánech). Pokud je hodnota zadána ve stupních, lze ji převést na radiány pomocí vzorce: \( \varphi = \frac{\text{stupně} \cdot \pi}{180} \)</li>
-            <li>\( \delta \) představuje deklinaci Slunce (v radiánech). Pro zjednodušení je pro roční úroveň považována rovna nule a celý výpočet lze tedy pro naše podmínky nahradit konstantou 4380 hod. Výpočet s proměnlivou hodnotou \( \delta \) by měl smysl např. pro denní nebo měsíční časový krok.</li>
+            <li>\( \varphi \) je zeměpisná šířka (v radiánech)</li>
+            <li>\( \delta \) představuje deklinaci Slunce (v radiánech)</li>
         </ul>
 
-        <h4>3. Výpočet roční globální radiace \( G^{\text{ročně}} \)</h4>
-        <p>Pro výpočet roční globální radiace \( G^{\text{ročně}} \) použijeme Angström-Prescottovu rovnici:</p>
+        <h4>3. Výpočet roční globální radiace \\( G^{\text{ročně}} \\)</h4>
+        <p>Pro výpočet roční globální radiace \\( G^{\text{ročně}} \\) použijeme Angström-Prescottovu rovnici:</p>
 
-        <p>\[
+        <p>
+        \\[
         G^{\text{ročně}} = G_0^{\text{ročně}} \cdot \left( a + b \cdot \frac{S^{\text{ročně}}}{S_0^{\text{ročně}}} \right)
-        \]</p>
+        \\]
+        </p>
 
         <ul>
             <li>\( G_0^{\text{ročně}} \) je roční extraterestrická radiace (v MJ/m²)</li>
@@ -77,17 +84,19 @@
         <p>Pokud máme následující hodnoty:</p>
 
         <ul>
-            <li>Roční extraterestrická radiace: \( G_0^{\text{ročně}} = 8000 \, MJ/m^2 \)</li>
-            <li>Měřená roční délka slunečního svitu: \( S^{\text{ročně}} = 2000 \, hodin \)</li>
-            <li>Maximální teoretická délka slunečního svitu: \( S_0^{\text{ročně}} = 4400 \, hodin \)</li>
-            <li>Empirické koeficienty: \( a = 0.25 \), \( b = 0.50 \)</li>
+            <li>Roční extraterestrická radiace: \\( G_0^{\text{ročně}} = 8000 \, MJ/m^2 \\)</li>
+            <li>Měřená roční délka slunečního svitu: \\( S^{\text{ročně}} = 2000 \, hodin \\)</li>
+            <li>Maximální teoretická délka slunečního svitu: \\( S_0^{\text{ročně}} = 4400 \, hodin \\)</li>
+            <li>Empirické koeficienty: \\( a = 0.25 \\), \\( b = 0.50 \\)</li>
         </ul>
 
         <p>Potom roční globální radiace bude:</p>
 
-        <p>\[
+        <p>
+        \\[
         G^{\text{ročně}} = 8000 \cdot \left( 0.25 + 0.50 \cdot \frac{2000}{4400} \right) = 3818.4 \, MJ/m^2
-        \]</p>
+        \\]
+        </p>
 
         <p>Roční globální radiace tedy vyjde přibližně 3818.4 MJ/m².</p>
 
