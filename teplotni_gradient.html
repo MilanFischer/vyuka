@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <title>Teplotní klimatický gradient</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h1 {
+            color: #2c3e50;
+        }
+
+        h2, h3, h4 {
+            color: #34495e;
+        }
+
+        p {
+            line-height: 1.6;
+            font-size: 18px;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Teplotní klimatický gradient</h1>
+
+        <p>Změna teploty vzduchu s nadmořskou výškou se v meteorologii označuje jako vertikální teplotní gradient. Tento gradient se obvykle udává pro interval 100 metrů, přičemž jeho průměrná hodnota v troposféře činí přibližně 0,65 °C na 100 m. Tato hodnota však není konstantní; mění se v závislosti na denní a roční době, nadmořské výšce a geografické poloze místa. Obecně platí, že s rostoucí nadmořskou výškou teplota klesá. Tento pokles teploty je důsledkem nižšího atmosférického tlaku a snížené hustoty vzduchu ve vyšších nadmořských výškách, což snižuje schopnost vzduchu zadržovat teplo. Teplotní gradient má zásadní vliv na rozložení různých ekosystémů a podnebí na Zemi. Je také důležitý pro meteorologii a studium klimatických změn, neboť změny v gradientu mohou naznačovat změny v globálním či regionálním klimatu.</p>
+
+        <h2>1. Příprava dat</h2>
+        <ul>
+            <li>Použijeme tabulky podnebí poskytující data pro období 1901–1950.</li>
+            <li>Na základě abecedního seznamu klimatických stanic a přehledu zpracovaných charakteristik vybereme alespoň 15 lokalit s různou nadmořskou výškou. Je podstatné, aby (i) vybrané lokality byly z oblasti vybrané stanice, (ii) výběr zahrnoval vybranou stanici, (iii) rozdíl nadmořských výšek mezi nejníže a nejvýše položenou stanicí byl alespoň 500 m a (iv) lokality byly vzhledem k nadmořské výšce vybrány rovnoměrně.</li>
+            <li>Pro každou z vybraných lokalit vypíšeme celkem 4 položky: (i) nadmořskou výšku (z abecedního seznamu stanic), (ii) roční průměrnou teplotu vzduchu (Tab. 1), (iii) průměrnou teplotu nejchladnějšího měsíce (Tab. 1) a (iv) průměrnou teplotu nejteplejšího měsíce (Tab. 1).</li>
+        </ul>
+
+        <h2>2. Grafické znázornění dat</h2>
+        <ul>
+            <li>Použijeme tzv. bodový graf. Na osu x vyneseme nadmořskou výšku a na osu y průměrné roční, respektive měsíční teploty.</li>
+            <li>Body proložíme lineární spojnicí trendů a zobrazíme (i) rovnici lineární regrese a (ii) koeficient determinace.</li>
+        </ul>
+
+        <h2>3. Interpretace výsledků</h2>
+        <ul>
+            <li>Jaká je hodnota vertikálního teplotního gradientu na základě průměrné roční teploty v dané oblasti?</li>
+            <li>Jaká je hodnota vertikálního teplotního gradientu na základě průměrné měsíční teploty nejteplejšího a nejchladnějšího měsíce v dané oblasti?</li>
+            <li>Vysvětli rozdíly mezi jednotlivými teplotními klimatickými gradienty.</li>
+        </ul>
+
+        <button onclick="window.location.href='zadani_seminarni_prace.html';">Zpět na Zadání seminární práce</button>
+    </div>
+
+</body>
+</html>
