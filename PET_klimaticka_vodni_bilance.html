@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-    <title>Výpočet potenciální evapotranspirace a klimatické vodní bilance</title>
+    <title>Výpočet potenciální evapotranspirace a klimatologické vodní bilance</title>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <style>
@@ -71,9 +71,9 @@
 <body>
 
     <div class="container">
-<h1>Výpočet potenciální evapotranspirace a klimatické vodní bilance</h1>
+<h1>Výpočet potenciální evapotranspirace a klimatologické vodní bilance</h1>
 
-<p>Tento postup vám umožní vypočítat roční potenciální evapotranspiraci s využitím dat teploty vzduchu a globální radiace. Následně, v kombinaci s daty srážek lze stanovit klimatickou vodní bilanci. Postup zahrnuje tři hlavní kroky: výpočet sklonu křivky nasycené vodní páry, výpočet potenciální evapotranspirace a výpočet klimatické vodní bilance. 
+<p>Tento postup vám umožní vypočítat roční potenciální evapotranspiraci s využitím dat teploty vzduchu a globální radiace. Následně, v kombinaci s daty srážek lze stanovit klimatologickou vodní bilanci. Postup zahrnuje tři hlavní kroky: výpočet sklonu křivky nasycené vodní páry, výpočet potenciální evapotranspirace a výpočet klimatologické vodní bilance. 
 V prvním kroku si tedy pro námi zvolenou stanici stáhneme <a href="https://www.chmi.cz/historicka-data/pocasi/mesicni-data/mesicni-data-dle-z.-123-1998-Sb" target="_blank">měsíční data</a> úhrnů srážek. Jako obvykle dbáme na to, aby data pokrývala období 1961–2020.</p>
 
 <h2>1. Výpočet sklonu křivky nasycené vodní páry \( \frac{de_s}{dT} \) (\( \Delta \))</h2>
@@ -102,7 +102,7 @@ e_s(T) = e_0 \cdot \exp\left(\frac{a \cdot T}{b + T}\right)
     <li>\( a \), \( b \) a \( T \) mají stejný význam jako výše.</li>
 </ul>
 
-<p>Tento výpočet slouží jako základní krok při stanovení potenciální evapotranspirace a následné klimatické vodní bilance.</p>
+<p>Tento výpočet slouží jako základní krok při stanovení potenciální evapotranspirace a následné klimatologické vodní bilance.</p>
 
 <h2>2. Výpočet potenciální evapotranspirace (PET)</h2>
 <p>Pro výpočet potenciální evapotranspirace (PET) využijeme jednoduchý model dle Makkink–Hansensena. Pro výpočet je zapotřebí znát globální radiaci \( G^{\text{ročně}} \) a sklon křivky nasycené vodní páry \( \Delta \).</p>
