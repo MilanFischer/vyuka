@@ -104,17 +104,20 @@ V prvním kroku si tedy pro námi zvolenou stanici stáhneme <a href="https://ww
 
         <p>Tyto výpočty slouží jako základní krok při stanovení potenciální evapotranspirace a následné klimatické vodní bilance.</p>
 
-        <h2>2. Výpočet maximální teoretické délky slunečního svitu \( S_0^{\text{ročně}} \)</h2>
-        <p>Teoretická maximální délka slunečního svitu \( S_0^{\text{ročně}} \) se vypočítá následovně:</p>
+        <h2>2. Výpočet potenciální evapotranspirace (PET)</h2>
+        <p>Pro výpočet potenciální evapotranspirace (PET) využijeme jednoduchý model dle Makkink–Hansensena. Pro výpočet je zapotřebí znát globální radiaci \( G^{\text{ročně}} \) a sklon křivky nasycené vodní páry \( \frac{de_s}{dT} \).</p>
 
         <p>\[
-        S_0^{\text{ročně}} = \frac{24 \cdot 365}{\pi} \cdot \arccos(-\tan(\varphi) \cdot \tan(\delta))
+        PET = 0.7 \cdot G^{\text{ročně}} \cdot \frac{\frac{de_s}{dT}}{\frac{de_s}{dT} + \gamma} \cdot \arccos(-\tan(\varphi) \cdot \tan(\delta))
         \]</p>
 
         <ul>
-            <li>\( \varphi \) je zeměpisná šířka (v radiánech). Pokud je hodnota zadána ve stupních, lze ji převést na radiány pomocí vzorce: \( \varphi = \frac{\text{stupně} \cdot \pi}{180} \)</li>
-            <li>\( \delta \) představuje deklinaci Slunce (v radiánech), nabývající hodnoty 0.409 při letním slunovratu, hodnoty -0.409 při zimním slunovratu a hodnoty 0 při jarní a podzimní rovnodennosti. Pro zjednodušení je pro roční úroveň považována rovna nule a celý výpočet lze tedy pro naše podmínky nahradit konstantou 4380 hod. Výpočet s proměnlivou hodnotou \( \delta \) by měl smysl např. pro denní nebo měsíční časový krok.</li>
+            <li>\( G^{\text{ročně}} \) je roční úhrn globální radiace (v MJ/m²).</li>
+            <li>\( \frac{de_s}{dT} \) je sklon křivky nasycené vodní páry (v kPa/°C), vypočítaný podle rovnice v předchozím kroku.</li>
+            <li>\( \gamma \) je psychrometrická konstanta (přibližně \( 0.066 \) kPa/°C).</li>
         </ul>
+
+<p>Tento model PET je vhodný pro odhad potenciální evapotranspirace na základě jednoduchých dostupných dat.</p>
 
         <h2>3. Výpočet roční globální radiace \( G^{\text{ročně}} \)</h2>
         <p>Pro výpočet roční globální radiace \( G^{\text{ročně}} \) použijeme Angström-Prescottovu rovnici:</p>
