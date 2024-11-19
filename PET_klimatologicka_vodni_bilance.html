@@ -85,9 +85,9 @@ e_s(T) = e_0 \cdot \exp\left(\frac{a \cdot T}{b + T}\right)
 
 <ul>
     <li>\( e_s(T) \) je tlak nasycené vodní páry při teplotě \( T \) (v kPa).</li>
-    <li>\( e_0 \) je referenční tlak (obvykle \( 0.611 \) kPa při 0 °C).</li>
+    <li>\( e_0 \) je referenční tlak (obvykle \( 0.6108 \) kPa při 0 °C).</li>
     <li>\( T \) je teplota ve °C.</li>
-    <li>\( a = 17.27 \) a \( b = 237.7 \) jsou empirické konstanty pro vodu.</li>
+    <li>\( a = 17.27 \) a \( b = 237.3 \) jsou empirické konstanty pro vodu.</li>
 </ul>
 
 <p>Následně derivujeme tlak nasycené páry, abychom získali sklon křivky:</p>
@@ -96,10 +96,14 @@ e_s(T) = e_0 \cdot \exp\left(\frac{a \cdot T}{b + T}\right)
 \Delta = \frac{de_s}{dT} = e_s(T) \cdot \frac{a \cdot b}{(b + T)^2}
 \]</p>
 
+<p>Pro zjednodušení lze sklon křivky nasycené vodní páry vypočítat přímo bez předchozího výpočtu \( e_s(T) \):</p>
+
+<p>\[
+\Delta = \frac{4098 \cdot (0.6108 \cdot \exp\left(\frac{17.27 \cdot T}{T + 237.3}\right))}{(T + 237.3)^2}
+\]</p>
+
 <ul>
     <li>\( \Delta \) je sklon křivky nasycené vodní páry (v kPa/°C).</li>
-    <li>\( e_s(T) \) se vypočítá z první rovnice.</li>
-    <li>\( a \), \( b \) a \( T \) mají stejný význam jako výše.</li>
 </ul>
 
 <p>Tento výpočet slouží jako základní krok při stanovení potenciální evapotranspirace a následné klimatologické vodní bilance.</p>
@@ -119,27 +123,6 @@ PET = 0.7 \cdot \frac{G^{\text{ročně}}}{\lambda} \cdot \frac{\Delta}{\Delta + 
 </ul>
 
 <p>Tento model PET je vhodný pro odhad potenciální evapotranspirace na základě jednoduchých dostupných dat.</p>
-
-<h2>3. Výpočet klimatologické vodní bilance a aridity území</h2>
-<p>Klimatologickou vodní bilanci (KVB) stanovíme jako rozdíl ročních úhrnnů srážek (\( P \)) a potenciální evapotranspirace (\( PET \)):</p>
-
-<p>\[
-KVB = P - PET
-\]</p>
-
-<p>Obdobně můžeme rovněž stanovit tzv. index aridity (IA) jako:</p>
-<p>\[
-IA = \frac{PET}{P}
-\]</p>
-
-<h2>4. Stručná souhrnná statistika</h2>
-<ul>
-    <li>Vypočítáme průměrnou roční sumu potenciální evapotranspirace (PET) pro dva poslední klimatologické normály (1961–1990 a 1991–2020) a určíme případný posun.</li>
-    <li>Pomocí spojnice trendů stanovíme časový trend vyjádřený jako změnu roční sumy potenciální evapotranspirace za dekádu.</li>
-    <li>Posoudíme, zda je strmost trendů konstantní během celého 60letého období.</li>
-    <li>Totéž provedeme pro klimatologickou vodní bilanci a index aridity.</li>
-    <li>Analyzujeme, ve kterých letech nabývá PET, KVB a IA nejnižších či naopak nejvyšších hodnot, a tyto hodnoty interpretujeme.</li>
-</ul>
 
 <button onclick="window.location.href='zadani_seminarni_prace.html';">Zpět na Zadání seminární práce</button>
 </div>
