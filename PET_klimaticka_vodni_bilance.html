@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <title>Výpočet potenciální evapotranspirace a klimatickcé vodní bilance</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h1 {
+            color: #2c3e50;
+        }
+
+        h2, h3, h4 {
+            color: #34495e;
+        }
+
+        p {
+            line-height: 1.6;
+            font-size: 18px;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Výpočet potenciální evapotranspirace a klimatickcé vodní bilance</h1>
+
+        <p>Tento postup vám umožní vypočítat roční potenciální evapotranspiraci s využitím dat teploty vzduchu a globální radiace. Následně, v kombianci s daty srážek lze stanovit klimatickou vodní bilanci. Postup zahrnuje tři hlavní kroky: výpočet sklonu křivky nasycené vodní páry, výpočet potenciální evapotranspiracde a výpočet klimatické vodní bilance.
+          V prvním kroku si tedy pro námi zvolenou stanici stáhneme <a href="https://www.chmi.cz/historicka-data/pocasi/mesicni-data/mesicni-data-dle-z.-123-1998-Sb" target="_blank">měsíční data</a> úhrnů srážek. Jako obvykle dbáme na to, aby data pokrývala období 1961–2020.</p>
+
+        <h2>1. Výpočet roční extraterestrické radiace \( G_0^{\text{ročně}} \)</h2>
+        <p>Roční extraterestrická radiace se vypočítá podle následujícího vzorce:</p>
+
+        <p>\[
+        G_0^{\text{ročně}} = \frac{I_0 \cdot 3600 \cdot 365 \cdot 24}{\pi} \cdot (1 + 0.033 \cdot \cos(2\pi \cdot \frac{n}{365})) \cdot \cos(\varphi) / 10^6
+        \]</p>
+
+        <ul>
+            <li>\( I_0 \) je sluneční konstanta (přibližně 1367 W/m²)</li>
+            <li>\( \varphi \) je zeměpisná šířka (v radiánech)</li>
+            <li>\( n \) je pořadové číslo dne (pro roční hodnoty lze použít \( n = 182.5 \))</li>
+        </ul>
+
+        <h2>2. Výpočet maximální teoretické délky slunečního svitu \( S_0^{\text{ročně}} \)</h2>
+        <p>Teoretická maximální délka slunečního svitu \( S_0^{\text{ročně}} \) se vypočítá následovně:</p>
+
+        <p>\[
+        S_0^{\text{ročně}} = \frac{24 \cdot 365}{\pi} \cdot \arccos(-\tan(\varphi) \cdot \tan(\delta))
+        \]</p>
+
+        <ul>
+            <li>\( \varphi \) je zeměpisná šířka (v radiánech). Pokud je hodnota zadána ve stupních, lze ji převést na radiány pomocí vzorce: \( \varphi = \frac{\text{stupně} \cdot \pi}{180} \)</li>
+            <li>\( \delta \) představuje deklinaci Slunce (v radiánech), nabývající hodnoty 0.409 při letním slunovratu, hodnoty -0.409 při zimním slunovratu a hodnoty 0 při jarní a podzimní rovnodennosti. Pro zjednodušení je pro roční úroveň považována rovna nule a celý výpočet lze tedy pro naše podmínky nahradit konstantou 4380 hod. Výpočet s proměnlivou hodnotou \( \delta \) by měl smysl např. pro denní nebo měsíční časový krok.</li>
+        </ul>
+
+        <h2>3. Výpočet roční globální radiace \( G^{\text{ročně}} \)</h2>
+        <p>Pro výpočet roční globální radiace \( G^{\text{ročně}} \) použijeme Angström-Prescottovu rovnici:</p>
+
+        <p>\[
+        G^{\text{ročně}} = G_0^{\text{ročně}} \cdot \left( a + b \cdot \frac{S^{\text{ročně}}}{S_0^{\text{ročně}}} \right)
+        \]</p>
+
+        <ul>
+            <li>\( G_0^{\text{ročně}} \) je roční extraterestrická radiace (v MJ/m²)</li>
+            <li>\( S^{\text{ročně}} \) je měřená roční délka slunečního svitu (v hodinách)</li>
+            <li>\( S_0^{\text{ročně}} \) je maximální teoretická délka slunečního svitu (v hodinách)</li>
+            <li>\( a \) a \( b \) jsou empirické koeficienty, typicky \( a = 0.25 \) a \( b = 0.50 \)</li>
+        </ul>
+
+        <h2>Příklad výpočtu</h2>
+        <p>Pokud máme následující hodnoty:</p>
+
+        <ul>
+            <li>Roční extraterestrická radiace: \( G_0^{\text{ročně}} = 8000 \, MJ/m^2 \)</li>
+            <li>Měřená roční délka slunečního svitu: \( S^{\text{ročně}} = 2000 \, hodin \)</li>
+            <li>Maximální teoretická délka slunečního svitu: \( S_0^{\text{ročně}} = 4400 \, hodin \)</li>
+            <li>Empirické koeficienty: \( a = 0.25 \), \( b = 0.50 \)</li>
+        </ul>
+
+        <p>Potom roční globální radiace bude:</p>
+
+        <p>\[
+        G^{\text{ročně}} = 8000 \cdot \left( 0.25 + 0.50 \cdot \frac{2000}{4400} \right) = 3818.4 \, MJ/m^2/rok
+        \]</p>
+
+        <p>Roční globální radiace tedy vyjde přibližně 3820 MJ/m²/rok.</p>
+
+        <h2>Výpočet s měřenými daty</h2>
+        Výpočet s měřenými daty provedeme stejně jako ve výše popsaném příkladu, s tím, že \( S^{\text{ročně}}  \) bude pocházet z dat pro námi vybranou stanici.</p>
+
+        <h2>4. Stručná souhrnná statistika</h2>
+        <ul>
+            <li>Vypočítáme průměrnou roční sumu globální radiace \( G^{\text{ročně}} \) pro dva poslední klimatologické normály (1961–1990 a 1991–2020) a určíme případný posun.</li>
+            <li>S využitím spojnice trendů stanovíme časový trend vyjádřený jako změnu roční sumy globální radiace za dekádu.</li>
+            <li>Posoudíme, zda je strmost trendů konstantní během celého 60letého období.</li>
+        </ul>
+
+        <button onclick="window.location.href='zadani_seminarni_prace.html';">Zpět na Zadání seminární práce</button>
+    </div>
+
+</body>
+</html>
