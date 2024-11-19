@@ -120,47 +120,21 @@ PET = 0.7 \cdot \frac{G^{\text{ročně}}}{\lambda} \cdot \frac{\Delta}{\Delta + 
 
 <p>Tento model PET je vhodný pro odhad potenciální evapotranspirace na základě jednoduchých dostupných dat.</p>
 
-        <h2>3. Výpočet roční globální radiace \( G^{\text{ročně}} \)</h2>
-        <p>Pro výpočet roční globální radiace \( G^{\text{ročně}} \) použijeme Angström-Prescottovu rovnici:</p>
+        <h2>3. Výpočet klimatologické vodní bilance \(P - PET\)</h2>
+        <p>Klimatologickou vodní bilanci stanovíme jako rozdíl srážek (P)  a potenciální evapotranpsirace (PET) :</p>
 
         <p>\[
-        G^{\text{ročně}} = G_0^{\text{ročně}} \cdot \left( a + b \cdot \frac{S^{\text{ročně}}}{S_0^{\text{ročně}}} \right)
+        VB = P - PET \right)
         \]</p>
 
-        <ul>
-            <li>\( G_0^{\text{ročně}} \) je roční extraterestrická radiace (v MJ/m²)</li>
-            <li>\( S^{\text{ročně}} \) je měřená roční délka slunečního svitu (v hodinách)</li>
-            <li>\( S_0^{\text{ročně}} \) je maximální teoretická délka slunečního svitu (v hodinách)</li>
-            <li>\( a \) a \( b \) jsou empirické koeficienty, typicky \( a = 0.25 \) a \( b = 0.50 \)</li>
-        </ul>
-
-        <h2>Příklad výpočtu</h2>
-        <p>Pokud máme následující hodnoty:</p>
-
-        <ul>
-            <li>Roční extraterestrická radiace: \( G_0^{\text{ročně}} = 8000 \, MJ/m^2 \)</li>
-            <li>Měřená roční délka slunečního svitu: \( S^{\text{ročně}} = 2000 \, hodin \)</li>
-            <li>Maximální teoretická délka slunečního svitu: \( S_0^{\text{ročně}} = 4400 \, hodin \)</li>
-            <li>Empirické koeficienty: \( a = 0.25 \), \( b = 0.50 \)</li>
-        </ul>
-
-        <p>Potom roční globální radiace bude:</p>
-
-        <p>\[
-        G^{\text{ročně}} = 8000 \cdot \left( 0.25 + 0.50 \cdot \frac{2000}{4400} \right) = 3818.4 \, MJ/m^2/rok
+        Obdobně  můžeme rovněž stnovit tyv. index aridity jako:
+                <p>\[
+        AI = PET/P \right)
         \]</p>
 
-        <p>Roční globální radiace tedy vyjde přibližně 3820 MJ/m²/rok.</p>
 
-        <h2>Výpočet s měřenými daty</h2>
-        Výpočet s měřenými daty provedeme stejně jako ve výše popsaném příkladu, s tím, že \( S^{\text{ročně}}  \) bude pocházet z dat pro námi vybranou stanici.</p>
 
-        <h2>4. Stručná souhrnná statistika</h2>
-        <ul>
-            <li>Vypočítáme průměrnou roční sumu globální radiace \( G^{\text{ročně}} \) pro dva poslední klimatologické normály (1961–1990 a 1991–2020) a určíme případný posun.</li>
-            <li>S využitím spojnice trendů stanovíme časový trend vyjádřený jako změnu roční sumy globální radiace za dekádu.</li>
-            <li>Posoudíme, zda je strmost trendů konstantní během celého 60letého období.</li>
-        </ul>
+        
 
         <button onclick="window.location.href='zadani_seminarni_prace.html';">Zpět na Zadání seminární práce</button>
     </div>
