@@ -73,10 +73,10 @@
 <div class="container">
 <h1>Výpočet potenciální evapotranspirace a klimatologické vodní bilance</h1>
 
-<p>Tento postup vám umožní vypočítat roční potenciální evapotranspiraci s využitím dat teploty vzduchu a globální radiace. Následně, v kombinaci s daty srážek, lze stanovit klimatologickou vodní bilanci. Postup zahrnuje tři hlavní kroky: výpočet sklonu křivky nasycené vodní páry, výpočet potenciální evapotranspirace a výpočet klimatologické vodní bilance. 
+<p>Tento postup vám umožní vypočítat roční potenciální evapotranspiraci s využitím dat teploty vzduchu a globální radiace. Následně, v kombinaci s daty srážek, lze stanovit klimatologickou vodní bilanci. Postup zahrnuje tři hlavní kroky: výpočet sklonu křivky tlaku nasycené vodní páry, výpočet potenciální evapotranspirace a výpočet klimatologické vodní bilance. 
 V prvním kroku si pro námi zvolenou stanici stáhneme <a href="https://www.chmi.cz/historicka-data/pocasi/mesicni-data/mesicni-data-dle-z.-123-1998-Sb" target="_blank">měsíční data</a> úhrnů srážek. Jako obvykle dbáme na to, aby data pokrývala období 1961–2020. Dále budeme potřebovat data průměrné roční teploty a globální radiace, které máme připraveny již z předchozích cvičení.</p>
 
-<h2>1. Výpočet sklonu křivky nasycené vodní páry \( \frac{de_s}{dT} \) (\( \Delta \))</h2>
+<h2>1. Výpočet sklonu křivky tlaku nasycené vodní páry \( \frac{de_s}{dT} \) (\( \Delta \))</h2>
 <p>Výpočet tlaku nasycené vodní páry se provádí podle Magnusovy rovnice:</p>
 
 <p>\[
@@ -96,20 +96,20 @@ e_s(T) = e_0 \cdot \exp\left(\frac{a \cdot T}{b + T}\right)
 \Delta = \frac{de_s}{dT} = e_s(T) \cdot \frac{a \cdot b}{(b + T)^2}
 \]</p>
 
-<p>Pro zjednodušení lze sklon křivky nasycené vodní páry vypočítat přímo bez předchozího výpočtu \( e_s(T) \):</p>
+<p>Pro zjednodušení lze sklon křivky tlaku nasycené vodní páry vypočítat přímo bez předchozího výpočtu \( e_s(T) \):</p>
 
 <p>\[
 \Delta = \frac{4098 \cdot (0.6108 \cdot \exp\left(\frac{17.27 \cdot T}{T + 237.3}\right))}{(T + 237.3)^2}
 \]</p>
 
 <ul>
-    <li>\( \Delta \) je sklon křivky nasycené vodní páry (v kPa/°C).</li>
+    <li>\( \Delta \) je sklon křivky tlaku nasycené vodní páry (v kPa/°C).</li>
 </ul>
 
 <p>Tento výpočet slouží jako základní krok při stanovení potenciální evapotranspirace a následné klimatologické vodní bilance.</p>
 
 <h2>2. Výpočet potenciální evapotranspirace (PET)</h2>
-<p>Pro výpočet potenciální evapotranspirace (PET, mm/rok) využijeme jednoduchý model dle Makkink–Hansena. Pro výpočet je zapotřebí znát globální radiaci \( G^{\text{ročně}} \) (viz <a href="vypocet_radiace.html">zde</a>) a sklon křivky nasycené vodní páry \( \Delta \).</p>
+<p>Pro výpočet potenciální evapotranspirace (PET, mm/rok) využijeme jednoduchý model dle Makkink–Hansena. Pro výpočet je zapotřebí znát globální radiaci \( G^{\text{ročně}} \) (viz <a href="vypocet_radiace.html">zde</a>) a sklon křivky tlaku nasycené vodní páry \( \Delta \).</p>
 
 <p>\[
 PET = 0.7 \cdot \frac{G^{\text{ročně}}}{\lambda} \cdot \frac{\Delta}{\Delta + \gamma}
@@ -118,7 +118,7 @@ PET = 0.7 \cdot \frac{G^{\text{ročně}}}{\lambda} \cdot \frac{\Delta}{\Delta + 
 <ul>
     <li>\( G^{\text{ročně}} \) je roční úhrn globální radiace (v MJ/m²/rok).</li>
     <li>\( \lambda \) je skupenské teplo vypařování (2.45 MJ/kg).</li>
-    <li>\( \Delta \) je sklon křivky nasycené vodní páry (v kPa/°C), vypočítaný podle rovnice v předchozím kroku.</li>
+    <li>\( \Delta \) je sklon křivky tlaku nasycené vodní páry (v kPa/°C), vypočítaný podle rovnice v předchozím kroku.</li>
     <li>\( \gamma \) je psychrometrická konstanta (přibližně \( 0.066 \) kPa/°C).</li>
 </ul>
 
