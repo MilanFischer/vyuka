@@ -73,8 +73,8 @@
     <div class="container">
 <h1>Výpočet potenciální evapotranspirace a klimatologické vodní bilance</h1>
 
-<p>Tento postup vám umožní vypočítat roční potenciální evapotranspiraci s využitím dat teploty vzduchu a globální radiace. Následně, v kombinaci s daty srážek lze stanovit klimatologickou vodní bilanci. Postup zahrnuje tři hlavní kroky: výpočet sklonu křivky nasycené vodní páry, výpočet potenciální evapotranspirace a výpočet klimatologické vodní bilance. 
-V prvním kroku si tedy pro námi zvolenou stanici stáhneme <a href="https://www.chmi.cz/historicka-data/pocasi/mesicni-data/mesicni-data-dle-z.-123-1998-Sb" target="_blank">měsíční data</a> úhrnů srážek. Jako obvykle dbáme na to, aby data pokrývala období 1961–2020.</p>
+<p>Tento postup vám umožní vypočítat roční potenciální evapotranspiraci s využitím dat teploty vzduchu a globální radiace. Následně, v kombinaci s daty srážek, lze stanovit klimatologickou vodní bilanci. Postup zahrnuje tři hlavní kroky: výpočet sklonu křivky nasycené vodní páry, výpočet potenciální evapotranspirace a výpočet klimatologické vodní bilance. 
+V prvním kroku si pro námi zvolenou stanici stáhneme <a href="https://www.chmi.cz/historicka-data/pocasi/mesicni-data/mesicni-data-dle-z.-123-1998-Sb" target="_blank">měsíční data</a> úhrnů srážek. Jako obvykle dbáme na to, aby data pokrývala období 1961–2020.</p>
 
 <h2>1. Výpočet sklonu křivky nasycené vodní páry \( \frac{de_s}{dT} \) (\( \Delta \))</h2>
 <p>Výpočet tlaku nasycené vodní páry se provádí podle Magnusovy rovnice:</p>
@@ -121,7 +121,7 @@ PET = 0.7 \cdot \frac{G^{\text{ročně}}}{\lambda} \cdot \frac{\Delta}{\Delta + 
 <p>Tento model PET je vhodný pro odhad potenciální evapotranspirace na základě jednoduchých dostupných dat.</p>
 
 <h2>3. Výpočet klimatologické vodní bilance a aridity území</h2>
-<p>Klimatologickou vodní bilanci (KVB) stanovíme jako rozdíl srážek (P) a potenciální evapotranspirace (PET):</p>
+<p>Klimatologickou vodní bilanci (KVB) stanovíme jako rozdíl srážek (\( P \)) a potenciální evapotranspirace (\( PET \)):</p>
 
 <p>\[
 KVB = P - PET
@@ -131,6 +131,15 @@ KVB = P - PET
 <p>\[
 IA = \frac{PET}{P}
 \]</p>
+
+<h2>4. Stručná souhrnná statistika</h2>
+<ul>
+    <li>Vypočítáme průměrnou roční sumu potenciální evapotranspirace (PET) pro dva poslední klimatologické normály (1961–1990 a 1991–2020) a určíme případný posun.</li>
+    <li>Pomocí spojnice trendů stanovíme časový trend vyjádřený jako změnu roční sumy potenciální evapotranspirace za dekádu.</li>
+    <li>Posoudíme, zda je strmost trendů konstantní během celého 60letého období.</li>
+    <li>Totéž provedeme pro klimatologickou vodní bilanci a index aridity.</li>
+    <li>Analyzujeme, ve kterých letech nabývá PET, KVB a IA nejnižších či naopak nejvyšších hodnot, a tyto hodnoty interpretujeme.</li>
+</ul>
 
 <button onclick="window.location.href='zadani_seminarni_prace.html';">Zpět na Zadání seminární práce</button>
     </div>
