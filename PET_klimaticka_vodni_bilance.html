@@ -76,49 +76,50 @@
 <p>Tento postup vám umožní vypočítat roční potenciální evapotranspiraci s využitím dat teploty vzduchu a globální radiace. Následně, v kombinaci s daty srážek lze stanovit klimatickou vodní bilanci. Postup zahrnuje tři hlavní kroky: výpočet sklonu křivky nasycené vodní páry, výpočet potenciální evapotranspirace a výpočet klimatické vodní bilance. 
 V prvním kroku si tedy pro námi zvolenou stanici stáhneme <a href="https://www.chmi.cz/historicka-data/pocasi/mesicni-data/mesicni-data-dle-z.-123-1998-Sb" target="_blank">měsíční data</a> úhrnů srážek. Jako obvykle dbáme na to, aby data pokrývala období 1961–2020.</p>
 
-        <h2>1. Výpočet sklonu křivky nasycené vodní páry \( \frac{de_s}{dT} \)</h2>
-        <p>Výpočet nasycené vodní páry se vypočítá podle Magnusovy rovnice:</p>
+<h2>1. Výpočet sklonu křivky nasycené vodní páry \( \frac{de_s}{dT} \)</h2>
+<p>Výpočet nasycené vodní páry se provádí podle Magnusovy rovnice:</p>
 
-        <p>\[
-        e_s(T) = e_0 \cdot \exp\left(\frac{a \cdot T}{b + T}\right)
-        \]</p>
+<p>\[
+e_s(T) = e_0 \cdot \exp\left(\frac{a \cdot T}{b + T}\right)
+\]</p>
 
-        <ul>
-            <li>\( e_s(T) \) je tlak nasycené vodní páry při teplotě \( T \) (v kPa).</li>
-            <li>\( e_0 \) je referenční tlak (obvykle \( 0.611 \) kPa při 0 °C).</li>
-            <li>\( T \) je teplota ve °C.</li>
-            <li>\( a = 17.27 \) a \( b = 237.7 \) jsou empirické konstanty pro vodu.</li>
-        </ul>
+<ul>
+    <li>\( e_s(T) \) je tlak nasycené vodní páry při teplotě \( T \) (v kPa).</li>
+    <li>\( e_0 \) je referenční tlak (obvykle \( 0.611 \) kPa při 0 °C).</li>
+    <li>\( T \) je teplota ve °C.</li>
+    <li>\( a = 17.27 \) a \( b = 237.7 \) jsou empirické konstanty pro vodu.</li>
+</ul>
 
-        <p>Následně derivujeme tlak nasycené páry, abychom získali sklon:</p>
+<p>Následně derivujeme tlak nasycené páry, abychom získali sklon křivky:</p>
 
-        <p>\[
-        \frac{de_s}{dT} = e_s(T) \cdot \frac{a \cdot b}{(b + T)^2}
-        \]</p>
+<p>\[
+\frac{de_s}{dT} = e_s(T) \cdot \frac{a \cdot b}{(b + T)^2}
+\]</p>
 
-        <ul>
+<ul>
     <li>\( \frac{de_s}{dT} \) je sklon křivky nasycené vodní páry (v kPa/°C).</li>
     <li>\( e_s(T) \) se vypočítá z první rovnice.</li>
     <li>\( a \), \( b \) a \( T \) mají stejný význam jako výše.</li>
-        </ul>
+</ul>
 
-        <p>Tyto výpočty slouží jako základní krok při stanovení potenciální evapotranspirace a následné klimatické vodní bilance.</p>
+<p>Tento výpočet slouží jako základní krok při stanovení potenciální evapotranspirace a následné klimatické vodní bilance.</p>
 
-        <h2>2. Výpočet potenciální evapotranspirace (PET)</h2>
-        <p>Pro výpočet potenciální evapotranspirace (PET) využijeme jednoduchý model dle Makkink–Hansensena. Pro výpočet je zapotřebí znát globální radiaci \( G^{\text{ročně}} \) a sklon křivky nasycené vodní páry \( \frac{de_s}{dT} \).</p>
+<h2>2. Výpočet potenciální evapotranspirace (PET)</h2>
+<p>Pro výpočet potenciální evapotranspirace (PET) využijeme jednoduchý model dle Makkink–Hansensena. Pro výpočet je zapotřebí znát globální radiaci \( G^{\text{ročně}} \) a sklon křivky nasycené vodní páry \( \frac{de_s}{dT} \).</p>
 
-        <p>\[
-        PET = 0.7 \cdot \frac{\frac{G^{\text{ročně}}}{\lambda}} \cdot \frac{\frac{de_s}{dT}}{\frac{de_s}{dT} + \gamma}
-        \]</p>
+<p>\[
+PET = 0.7 \cdot \frac{G^{\text{ročně}}}{\lambda} \cdot \frac{\frac{de_s}{dT}}{\frac{de_s}{dT} + \gamma}
+\]</p>
 
-        <ul>
-            <li>\( G^{\text{ročně}} \) je roční úhrn globální radiace (v MJ/m²).</li>
-            <li>\( \lambda} \) je skupenské teplo vypařování (2.45 MJ/kg).</li>
-            <li>\( \frac{de_s}{dT} \) je sklon křivky nasycené vodní páry (v kPa/°C), vypočítaný podle rovnice v předchozím kroku.</li>
-            <li>\( \gamma \) je psychrometrická konstanta (přibližně \( 0.066 \) kPa/°C).</li>
-        </ul>
+<ul>
+    <li>\( G^{\text{ročně}} \) je roční úhrn globální radiace (v MJ/m²).</li>
+    <li>\( \lambda \) je skupenské teplo vypařování (2.45 MJ/kg).</li>
+    <li>\( \frac{de_s}{dT} \) je sklon křivky nasycené vodní páry (v kPa/°C), vypočítaný podle rovnice v předchozím kroku.</li>
+    <li>\( \gamma \) je psychrometrická konstanta (přibližně \( 0.066 \) kPa/°C).</li>
+</ul>
 
-        <p>Tento model PET je vhodný pro odhad potenciální evapotranspirace na základě jednoduchých dostupných dat.</p>
+<p>Tento model PET je vhodný pro odhad potenciální evapotranspirace na základě jednoduchých dostupných dat.</p>
+
 
         <h2>3. Výpočet roční globální radiace \( G^{\text{ročně}} \)</h2>
         <p>Pro výpočet roční globální radiace \( G^{\text{ročně}} \) použijeme Angström-Prescottovu rovnici:</p>
