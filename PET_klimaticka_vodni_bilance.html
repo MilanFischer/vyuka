@@ -71,23 +71,38 @@
 <body>
 
     <div class="container">
-        <h1>Výpočet potenciální evapotranspirace a klimatickcé vodní bilance</h1>
+<h1>Výpočet potenciální evapotranspirace a klimatické vodní bilance</h1>
 
-        <p>Tento postup vám umožní vypočítat roční potenciální evapotranspiraci s využitím dat teploty vzduchu a globální radiace. Následně, v kombianci s daty srážek lze stanovit klimatickou vodní bilanci. Postup zahrnuje tři hlavní kroky: výpočet sklonu křivky nasycené vodní páry, výpočet potenciální evapotranspiracde a výpočet klimatické vodní bilance.
-          V prvním kroku si tedy pro námi zvolenou stanici stáhneme <a href="https://www.chmi.cz/historicka-data/pocasi/mesicni-data/mesicni-data-dle-z.-123-1998-Sb" target="_blank">měsíční data</a> úhrnů srážek. Jako obvykle dbáme na to, aby data pokrývala období 1961–2020.</p>
+<p>Tento postup vám umožní vypočítat roční potenciální evapotranspiraci s využitím dat teploty vzduchu a globální radiace. Následně, v kombinaci s daty srážek lze stanovit klimatickou vodní bilanci. Postup zahrnuje tři hlavní kroky: výpočet sklonu křivky nasycené vodní páry, výpočet potenciální evapotranspirace a výpočet klimatické vodní bilance. 
+V prvním kroku si tedy pro námi zvolenou stanici stáhneme <a href="https://www.chmi.cz/historicka-data/pocasi/mesicni-data/mesicni-data-dle-z.-123-1998-Sb" target="_blank">měsíční data</a> úhrnů srážek. Jako obvykle dbáme na to, aby data pokrývala období 1961–2020.</p>
 
-        <h2>1. Výpočet roční extraterestrické radiace \( G_0^{\text{ročně}} \)</h2>
-        <p>Roční extraterestrická radiace se vypočítá podle následujícího vzorce:</p>
+<h2>1. Výpočet sklonu křivky nasycené vodní páry \( \frac{de_s}{dT} \)</h2>
+<p>Výpočet nasycené vodní páry se vypočítá podle Magnusovy rovnice:</p>
 
         <p>\[
-        G_0^{\text{ročně}} = \frac{I_0 \cdot 3600 \cdot 365 \cdot 24}{\pi} \cdot (1 + 0.033 \cdot \cos(2\pi \cdot \frac{n}{365})) \cdot \cos(\varphi) / 10^6
+        e_s(T) = e_0 \cdot \exp\left(\frac{a \cdot T}{b + T}\right)
         \]</p>
 
         <ul>
-            <li>\( I_0 \) je sluneční konstanta (přibližně 1367 W/m²)</li>
-            <li>\( \varphi \) je zeměpisná šířka (v radiánech)</li>
-            <li>\( n \) je pořadové číslo dne (pro roční hodnoty lze použít \( n = 182.5 \))</li>
+            <li>\( e_s(T) \) je tlak nasycené vodní páry při teplotě \( T \) (v kPa).</li>
+            <li>\( e_0 \) je referenční tlak (obvykle \( 0.611 \) kPa při 0 °C).</li>
+            <li>\( T \) je teplota ve °C.</li>
+            <li>\( a = 17.27 \) a \( b = 237.7 \) jsou empirické konstanty pro vodu.</li>
         </ul>
+
+        <p>Následně derivujeme tlak nasycené páry, abychom získali sklon:</p>
+
+        <p>\[
+        \frac{de_s}{dT} = e_s(T) \cdot \frac{a \cdot b}{(b + T)^2}
+        \]</p>
+
+        <ul>
+    <li>\( \frac{de_s}{dT} \) je sklon křivky nasycené vodní páry (v kPa/°C).</li>
+    <li>\( e_s(T) \) se vypočítá z první rovnice.</li>
+    <li>\( a \), \( b \) a \( T \) mají stejný význam jako výše.</li>
+        </ul>
+
+        <p>Tyto výpočty slouží jako základní krok při stanovení potenciální evapotranspirace a následné klimatické vodní bilance.</p>
 
         <h2>2. Výpočet maximální teoretické délky slunečního svitu \( S_0^{\text{ročně}} \)</h2>
         <p>Teoretická maximální délka slunečního svitu \( S_0^{\text{ročně}} \) se vypočítá následovně:</p>
