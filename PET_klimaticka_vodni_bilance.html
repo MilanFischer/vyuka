@@ -76,8 +76,8 @@
 <p>Tento postup vám umožní vypočítat roční potenciální evapotranspiraci s využitím dat teploty vzduchu a globální radiace. Následně, v kombinaci s daty srážek lze stanovit klimatickou vodní bilanci. Postup zahrnuje tři hlavní kroky: výpočet sklonu křivky nasycené vodní páry, výpočet potenciální evapotranspirace a výpočet klimatické vodní bilance. 
 V prvním kroku si tedy pro námi zvolenou stanici stáhneme <a href="https://www.chmi.cz/historicka-data/pocasi/mesicni-data/mesicni-data-dle-z.-123-1998-Sb" target="_blank">měsíční data</a> úhrnů srážek. Jako obvykle dbáme na to, aby data pokrývala období 1961–2020.</p>
 
-<h2>1. Výpočet sklonu křivky nasycené vodní páry \( \frac{de_s}{dT} \)</h2>
-<p>Výpočet nasycené vodní páry se vypočítá podle Magnusovy rovnice:</p>
+        <h2>1. Výpočet sklonu křivky nasycené vodní páry \( \frac{de_s}{dT} \)</h2>
+        <p>Výpočet nasycené vodní páry se vypočítá podle Magnusovy rovnice:</p>
 
         <p>\[
         e_s(T) = e_0 \cdot \exp\left(\frac{a \cdot T}{b + T}\right)
@@ -108,16 +108,17 @@ V prvním kroku si tedy pro námi zvolenou stanici stáhneme <a href="https://ww
         <p>Pro výpočet potenciální evapotranspirace (PET) využijeme jednoduchý model dle Makkink–Hansensena. Pro výpočet je zapotřebí znát globální radiaci \( G^{\text{ročně}} \) a sklon křivky nasycené vodní páry \( \frac{de_s}{dT} \).</p>
 
         <p>\[
-        PET = 0.7 \cdot G^{\text{ročně}} \cdot \frac{\frac{de_s}{dT}}{\frac{de_s}{dT} + \gamma} \cdot \arccos(-\tan(\varphi) \cdot \tan(\delta))
+        PET = 0.7 \cdot \frac{\frac{G^{\text{ročně}}}{\lambda}} \cdot \frac{\frac{de_s}{dT}}{\frac{de_s}{dT} + \gamma}
         \]</p>
 
         <ul>
             <li>\( G^{\text{ročně}} \) je roční úhrn globální radiace (v MJ/m²).</li>
+            <li>\( \lambda} \) je skupenské teplo vypařování (2.45 MJ/kg).</li>
             <li>\( \frac{de_s}{dT} \) je sklon křivky nasycené vodní páry (v kPa/°C), vypočítaný podle rovnice v předchozím kroku.</li>
             <li>\( \gamma \) je psychrometrická konstanta (přibližně \( 0.066 \) kPa/°C).</li>
         </ul>
 
-<p>Tento model PET je vhodný pro odhad potenciální evapotranspirace na základě jednoduchých dostupných dat.</p>
+        <p>Tento model PET je vhodný pro odhad potenciální evapotranspirace na základě jednoduchých dostupných dat.</p>
 
         <h2>3. Výpočet roční globální radiace \( G^{\text{ročně}} \)</h2>
         <p>Pro výpočet roční globální radiace \( G^{\text{ročně}} \) použijeme Angström-Prescottovu rovnici:</p>
