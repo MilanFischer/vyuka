@@ -69,42 +69,53 @@
 <body>
 
     <div class="container">
-        <h1>Výběr stanice a seznámení s daty</h1>
-
-        <h2>1. Výběr stanice</h2>
-        <ul>
-            <li>Vybereme si stanici, pro kterou budeme data zpracovávat. K výběru můžeme použít odkaz s <a href="https://opendata.chmi.cz/meteorology/climate/historical_csv/metadata/meta1.csv" target="_blank">metadaty</a>. Pro snažší orientaci můžeme také použít tuto <a href="https://www.chmi.cz/files/portal/docs/poboc/OS/stanice/ShowStations_CZ.html" target="_blank">mapu</a>. Při výběru je nezbytné zohlednit, že stanice poskytuje data alespoň od roku 1961 do roku 2020 a poskytuje jak teplotu vzduchu, tak srážky.</li>
-        </ul>
-
-        <h2>2. Zjištění souřadnic</h2>
-        <ul>
-            <li>Pro stanici si dohledáme přesné souřadnice (zaokrouhleno na čtyři desetinná místa) a spolu s názvem stanice je nahlásíme vyučujícímu.</li>
-        </ul>
-
-        <h2>3. Stažení dat</h2>
-        <ul>
-            <li>Pro začátek si stáhneme data pro průměrnou teplotu vzduchu.</li>
-        </ul>
-
-        <h2>4. Uložení dat</h2>
-        <ul>
-            <li>Data si uložíme do lokální složky. Pokud budeme data zpracovávat v MS Excel, data po otevření uložíme jako sešit aplikace Excel.</li>
-        </ul>
-
-        <h2>5. Vytvoření prvního grafu</h2>
-        <ul>
-            <li>Na zkoušku připravíme první graf zobrazující průměrnou roční teplotu vzduchu během let 1961–2020.</li>
-        </ul>
-
-        <h2>6. Stručná souhrnná statistika</h2>
-        <ul>
-            <li>Vypočítáme průměrnou teplotu pro dva poslední klimatologické normály (1961–1990 a 1991–2020) a určíme případný posun.</li>
-            <li>S využitím spojnice trendů stanovíme časový trend vyjádřený jako změnu teploty za dekádu.</li>
-            <li>Posoudíme, zda je strmost trendů konstantní během celého 60letého období.</li>
-        </ul>
-
-        
-        <button onclick="window.location.href='zadani_seminarni_prace.html';">Zpět na Zadání seminární práce</button>
+      <h1>Výběr stanice a seznámení s daty</h1>
+    
+      <h2>1. Výběr stanice pomocí mapy</h2>
+      <ul>
+        <li>Vyberte stanici, pro kterou budete data zpracovávat. K výběru můžete použít <a href="https://www.chmi.cz/files/portal/docs/poboc/OS/stanice/ShowStations_CZ.html" target="_blank" rel="noopener">mapu</a> stanic.</li>
+        <li>V legendě vyberte stanice (zaškrtněte T a SRA) a hledejte stanici, kde se sledují obě veličiny.</li>
+        <li>Každý student ve skupině si vybere jinou stanici.</li>
+        <li>Poznamenejte si z mapy ID stanice (např. B2KUCH01) a název.</li>
+      </ul>
+    
+      <h2>2. Vyhledání stanice v metadatovém souboru</h2>
+      <ul>
+        <li>Stáhněte si <a href="https://opendata.chmi.cz/meteorology/climate/historical_csv/metadata/meta1.csv" target="_blank" rel="noopener">soubor</a> s metadaty o stanicích a otevřete jej např. v MS Excel.</li>
+        <li>Vyhledejte svou vybranou stanici podle názvu nebo ID.</li>
+        <li>Ověřte, že stanice měří kontinuálně od roku 1961; pokud ne, zvolte raději jinou.</li>
+        <li>Poznamenejte si interní kód stanice (sloupec A „WSI“).</li>
+        <li>Poznamenejte si souřadnice stanice (sloupce F „GEOGR1“ a G „GEOGR2“) a nadmořskou výšku (sloupec H „ELEVATION“).</li>
+      </ul>
+    
+      <h2>3. Stažení dat teploty a srážek</h2>
+      <ul>
+        <li>Přejděte na <a href="https://opendata.chmi.cz/meteorology/climate/historical_csv/data/" target="_blank" rel="noopener">odkaz</a> datového repozitáře.</li>
+        <li>Otevřete složku <code>monthly</code>.</li>
+        <li>Budete pracovat se dvěma složkami – <code>temperature</code> a <code>precipitation</code> (postup je stejný; začněte teplotou).</li>
+        <li>Pomocí interního kódu stanice (viz bod 2.d) vyhledejte příslušné soubory (Ctrl+F).</li>
+        <li>Zajímá vás pouze soubor označený „T“ (nezajímají nás: TMA, TMI, TMInoc, TPM); ten stáhněte.</li>
+        <li>Zopakujte postup pro srážky.</li>
+      </ul>
+    
+      <h2>4. Uložení dat</h2>
+      <ul>
+        <li>Data uložte do lokální složky. Pokud budete data zpracovávat v MS Excel, po otevření je uložte jako sešit aplikace Excel.</li>
+      </ul>
+    
+      <h2>5. Vytvoření prvního grafu</h2>
+      <ul>
+        <li>Na zkoušku připravte první graf zobrazující průměrnou roční teplotu vzduchu během let 1961–2020.</li>
+      </ul>
+    
+      <h2>6. Stručná souhrnná statistika</h2>
+      <ul>
+        <li>Vypočítejte průměrnou teplotu pro dva poslední klimatologické normály (1961–1990 a 1991–2020) a určete případný posun.</li>
+        <li>Se spojnicí trendu stanovte časový trend vyjádřený jako změnu teploty za dekádu.</li>
+        <li>Posuďte, zda je strmost trendu konstantní během celého 60letého období.</li>
+      </ul>
+    
+      <button onclick="window.location.href='zadani_seminarni_prace.html';">Zpět na zadání seminární práce</button>
     </div>
 
 </body>
