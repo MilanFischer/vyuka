@@ -1,7 +1,4 @@
-<script>
 // Minimal CSV → XLSX widget that can be mounted anywhere.
-// Usage: window.initCsv2Xlsx({ targetId: "csv2xlsx" });
-
 (function(){
   // load a script from CDN if not present
   function loadScriptOnce(src){
@@ -158,4 +155,3 @@
     await mount(el);
   };
 })();
-</script>

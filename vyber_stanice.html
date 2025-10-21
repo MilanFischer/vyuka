@@ -67,6 +67,11 @@
     </style>
 </head>
 
+<script src="assets/csv2xlsx.js"></script>
+<script>
+  window.initCsv2Xlsx({ targetId: "csv2xlsx" });
+</script>
+
 <body>
 
     <div class="container">
@@ -119,13 +124,7 @@
       </ul>
       
       <h3>Volitelně: převod CSV na Excel</h3>
-      <div id="csv2xlsx" class="csv2xlsx-mount"></div>
-      
-      <!-- before </body>: -->
-      <script src="assets/csv2xlsx.js"></script>
-      <script>
-        window.initCsv2Xlsx({ targetId: "csv2xlsx" });
-      </script>
+      <div id="csv2xlsx"></div>
       
       <h2>6. Vytvoření prvních grafů</h2>
       <ul>
