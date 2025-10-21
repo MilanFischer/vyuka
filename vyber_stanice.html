@@ -66,6 +66,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <div class="container">
@@ -105,10 +106,27 @@
     
       <h2>5. Uložení dat</h2>
       <ul>
+        <p><a href="csv2xlsx.html">➜ Otevřít převodník CSV → Excel</a></p>
+
         <li>Data uložte do lokální složky. Pokud budete data zpracovávat v MS Excel, po otevření je uložte jako sešit aplikace Excel.</li>
         <li>S vědomím, že s daty budete pracovat celý semestr, vytvořte si přehlednou strukturu souborů, ve které se snadno vyznáte.</li>
       </ul>
-    
+      
+      <h2>5. Uložení dat</h2>
+      <ul>
+        <li>Data uložte do lokální složky. Pokud budete data zpracovávat v MS Excel, po otevření je uložte jako sešit aplikace Excel.</li>
+        <li>S vědomím, že s daty budete pracovat celý semestr, vytvořte si přehlednou strukturu souborů, ve které se snadno vyznáte.</li>
+      </ul>
+      
+      <h3>Volitelně: převod CSV na Excel</h3>
+      <div id="csv2xlsx" class="csv2xlsx-mount"></div>
+      
+      <!-- before </body>: -->
+      <script src="assets/csv2xlsx.js"></script>
+      <script>
+        window.initCsv2Xlsx({ targetId: "csv2xlsx" });
+      </script>
+      
       <h2>6. Vytvoření prvních grafů</h2>
       <ul>
         <li>Na zkoušku připravte první graf zobrazující průměrnou roční teplotu vzduchu během let 1961–2020.</li>
