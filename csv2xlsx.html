@@ -11,17 +11,37 @@
     a { color:#3498db; text-decoration:none; } a:hover{ text-decoration:underline; }
     button{ background:#3498db;color:#fff;padding:10px 15px;border:0;border-radius:5px;cursor:pointer;font-size:16px; }
     button:hover{ background:#2980b9; }
+    #dbg { color:#6b7280; font-size:.9rem; margin-top:.5rem; }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>Převod CSV → Excel (.xlsx)</h1>
     <p>Tento nástroj běží 100% v prohlížeči. Nahrajte CSV a stáhněte XLSX.</p>
+
     <div id="csv2xlsx"></div>
+    <div id="dbg"></div>
+
     <p><a href="vyber_stanice.html">← Zpět</a></p>
   </div>
 
+  <!-- Knihovny: UMD buildy musi být PŘED naším skriptem -->
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/exceljs@4.3.0/dist/exceljs.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.5/dist/FileSaver.min.js"></script>
+
+  <!-- Náš widget -->
   <script src="assets/csv2xlsx.js"></script>
-  <script>window.initCsv2Xlsx({ targetId: "csv2xlsx" });</script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      var dbg = document.getElementById('dbg');
+      dbg.textContent = "Načteno. Inicializuji widget…";
+      window.initCsv2Xlsx({ targetId: "csv2xlsx" }).then(function(){
+        dbg.textContent = "";
+      }).catch(function(e){
+        dbg.textContent = "Chyba: " + (e && e.message ? e.message : e);
+      });
+    });
+  </script>
 </body>
 </html>

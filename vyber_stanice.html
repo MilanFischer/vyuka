@@ -111,11 +111,9 @@
         <li>S vědomím, že s daty budete pracovat celý semestr, vytvořte si přehlednou strukturu souborů, ve které se snadno vyznáte.</li>
       </ul>
       
+      <h3>Volitelně: převod CSV na Excel</h3>
       <p><a href="csv2xlsx.html">➜ Otevřít převodník CSV → Excel</a></p>
 
-      <h3>Volitelně: převod CSV na Excel</h3>
-      <div id="csv2xlsx"></div>
-      
       <h2>6. Vytvoření prvních grafů</h2>
       <ul>
         <li>Na zkoušku připravte první graf zobrazující průměrnou roční teplotu vzduchu během let 1961–2020.</li>
@@ -138,6 +136,11 @@
     
       <button onclick="window.location.href='zadani_seminarni_prace.html';">Zpět na zadání seminární práce</button>
     </div>
+
+    <!-- Knihovny: UMD buildy musi být PŘED naším skriptem -->
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/exceljs@4.3.0/dist/exceljs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.5/dist/FileSaver.min.js"></script>
 
     <script src="assets/csv2xlsx.js"></script>
     <script>
