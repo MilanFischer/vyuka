@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
+    <meta charset="utf-8">
     <title>Výběr stanice a seznámení s daty</title>
     <style>
         body {
@@ -67,11 +68,6 @@
     </style>
 </head>
 
-<script src="assets/csv2xlsx.js"></script>
-<script>
-  window.initCsv2Xlsx({ targetId: "csv2xlsx" });
-</script>
-
 <body>
 
     <div class="container">
@@ -111,18 +107,12 @@
     
       <h2>5. Uložení dat</h2>
       <ul>
-        <p><a href="csv2xlsx.html">➜ Otevřít převodník CSV → Excel</a></p>
+        <li>Data uložte do lokální složky. Pokud budete data zpracovávat v MS Excel, po otevření je uložte jako sešit aplikace Excel.</li>
+        <li>S vědomím, že s daty budete pracovat celý semestr, vytvořte si přehlednou strukturu souborů, ve které se snadno vyznáte.</li>
+      </ul>
+      
+      <p><a href="csv2xlsx.html">➜ Otevřít převodník CSV → Excel</a></p>
 
-        <li>Data uložte do lokální složky. Pokud budete data zpracovávat v MS Excel, po otevření je uložte jako sešit aplikace Excel.</li>
-        <li>S vědomím, že s daty budete pracovat celý semestr, vytvořte si přehlednou strukturu souborů, ve které se snadno vyznáte.</li>
-      </ul>
-      
-      <h2>5. Uložení dat</h2>
-      <ul>
-        <li>Data uložte do lokální složky. Pokud budete data zpracovávat v MS Excel, po otevření je uložte jako sešit aplikace Excel.</li>
-        <li>S vědomím, že s daty budete pracovat celý semestr, vytvořte si přehlednou strukturu souborů, ve které se snadno vyznáte.</li>
-      </ul>
-      
       <h3>Volitelně: převod CSV na Excel</h3>
       <div id="csv2xlsx"></div>
       
@@ -148,6 +138,11 @@
     
       <button onclick="window.location.href='zadani_seminarni_prace.html';">Zpět na zadání seminární práce</button>
     </div>
+
+    <script src="assets/csv2xlsx.js"></script>
+    <script>
+      window.initCsv2Xlsx({ targetId: "csv2xlsx" });
+    </script>
 
 </body>
 </html>
