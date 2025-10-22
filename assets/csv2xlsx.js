@@ -7,12 +7,12 @@
   <h3 style="margin:0 0 .75rem 0;color:#34495e;">Převod CSV → Excel (.xlsx)</h3>
 
   <label style="display:block;margin:.5rem 0 .25rem;">Soubor CSV</label>
-  <input id="csvFile" type="file" accept=".csv,text/csv" style="width:%;padding:.5rem;border:1px solid #d1d5db;border-radius:6px;">
+  <input id="csvFile" type="file" accept=".csv,text/csv" style="width:100%;padding:.5rem;border:1px solid #d1d5db;border-radius:6px;">
 
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:.75rem;">
     <div>
       <label style="display:block;margin-bottom:.25rem;">Oddělovač</label>
-      <select id="delimiter" style="width:%;padding:.5rem;border:1px solid #d1d5db;border-radius:6px;">
+      <select id="delimiter" style="width:100%;padding:.5rem;border:1px solid #d1d5db;border-radius:6px;">
         <option value="auto" selected>Auto-detekce</option>
         <option value=",">Čárka (,)</option>
         <option value=";">Středník (;)</option>
@@ -22,7 +22,7 @@
     </div>
     <div>
       <label style="display:block;margin-bottom:.25rem;">Kódování</label>
-      <select id="encoding" style="width:%;padding:.5rem;border:1px solid #d1d5db;border-radius:6px;">
+      <select id="encoding" style="width:100%;padding:.5rem;border:1px solid #d1d5db;border-radius:6px;">
         <option value="utf-8" selected>UTF-8 (výchozí)</option>
         <option value="windows-1250">Windows-1250 (CZ/SK)</option>
         <option value="iso-8859-2">ISO-8859-2</option>
@@ -34,7 +34,7 @@
   <div style="display:grid;grid-template-columns:1fr;gap:.75rem;margin-top:.75rem;">
     <div>
       <label style="display:block;margin-bottom:.25rem;">Název listu</label>
-      <input id="sheetName" type="text" value="Data" style="width:%;padding:.5rem;border:1px solid #d1d5db;border-radius:6px;">
+      <input id="sheetName" type="text" value="Data" style="width:100%;padding:.5rem;border:1px solid #d1d5db;border-radius:6px;">
     </div>
   </div>
 
@@ -93,7 +93,7 @@
     let isPct = false;
     if (/%$/.test(t)) { isPct = true; t = t.replace(/%$/, ""); }
     const num = Number(t);
-    if (Number.isFinite(num)) return isPct ? num/ : num;
+    if (Number.isFinite(num)) return isPct ? num/100 : num;
     return null;
   }
   function looksLikeIdHeader(h){
